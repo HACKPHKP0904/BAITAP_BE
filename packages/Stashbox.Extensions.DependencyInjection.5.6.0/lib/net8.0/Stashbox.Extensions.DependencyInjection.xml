@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stashbox.Extensions.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions">
+            <summary>
+            Stashbox related <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> extensions.
+            </summary>
+            <summary>
+            Stashbox related <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> extensions.
+            </summary>
+            <summary>
+            Stashbox related <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> extensions.
+            </summary>
+            <summary>
+            Stashbox related <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> extensions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.ScanAssemblyOf``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Type,System.Boolean},System.Func{System.Type,System.Type,System.Boolean},System.Boolean,System.Action{Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers services from an assembly of the given type.
+            </summary>
+            <typeparam name="TService">The type used to access the assembly.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="selector">The type selector. Used to filter which types should be excluded/included in the registration process.</param>
+            <param name="serviceTypeSelector">The service type selector. Used to filter which interface or base types the implementation should be mapped to.</param>
+            <param name="registerSelf">If it's true the types will be registered to their own type too.</param>
+            <param name="configurator">Configurator action for the registered types.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.ScanAssemblyOf(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Func{System.Type,System.Boolean},System.Func{System.Type,System.Type,System.Boolean},System.Boolean,System.Action{Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers services from an assembly of the given type.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="type">The type used to access the assembly.</param>
+            <param name="selector">The type selector. Used to filter which types should be excluded/included in the registration process.</param>
+            <param name="serviceTypeSelector">The service type selector. Used to filter which interface or base types the implementation should be mapped to.</param>
+            <param name="registerSelf">If it's true the types will be registered to their own type too.</param>
+            <param name="configurator">Configurator action for the registered types.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.ScanAssembly(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly,System.Func{System.Type,System.Boolean},System.Func{System.Type,System.Type,System.Boolean},System.Boolean,System.Action{Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers services from an assembly.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="assembly">The assembly holding the types to register.</param>
+            <param name="selector">The type selector. Used to filter which types should be excluded/included in the registration process.</param>
+            <param name="serviceTypeSelector">The service type selector. Used to filter which interface or base types the implementation should be mapped to.</param>
+            <param name="registerSelf">If it's true the types will be registered to their own type too.</param>
+            <param name="configurator">Configurator action for the registered types.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.ComposeAssembly(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)">
+            <summary>
+            Scans the given assembly for <see cref="T:Stashbox.ICompositionRoot"/> implementations and invokes their <see cref="M:Stashbox.ICompositionRoot.Compose(Stashbox.IStashboxContainer)"/> method.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="assembly">The assembly to scan.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.ComposeBy``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Object[])">
+            <summary>
+            Composes services by calling the <see cref="M:Stashbox.ICompositionRoot.Compose(Stashbox.IStashboxContainer)"/> method of the given root.
+            </summary>
+            <typeparam name="TCompositionRoot">>The type of an <see cref="T:Stashbox.ICompositionRoot"/> implementation.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="compositionRootArguments">Optional composition root constructor argument overrides.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.ComposeBy(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Object[])">
+            <summary>
+            Composes services by calling the <see cref="M:Stashbox.ICompositionRoot.Compose(Stashbox.IStashboxContainer)"/> method of the given root.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="compositionRootType">The type of an <see cref="T:Stashbox.ICompositionRoot"/> implementation.</param>
+            <param name="compositionRootArguments">Optional composition root constructor argument overrides.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.Decorate``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Stashbox.Registration.Fluent.DecoratorConfigurator{``0,``1}})">
+            <summary>
+            Registers a decorator service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="configurator">Optional service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.Decorate``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Stashbox.Registration.Fluent.DecoratorConfigurator{``0,``0}})">
+            <summary>
+            Registers a decorator service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="configurator">Optional service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.Decorate(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,System.Action{Stashbox.Registration.Fluent.DecoratorConfigurator})">
+            <summary>
+            Registers a decorator service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="serviceType">The service type.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">Optional service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.Decorate(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Action{Stashbox.Registration.Fluent.DecoratorConfigurator})">
+            <summary>
+            Registers a decorator service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">Optional service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddTransient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator{``0,``1},Stashbox.Registration.Fluent.RegistrationConfigurator{``0,``1}})">
+            <summary>
+            Registers a transient service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator,Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers a transient service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="serviceType">The service type.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator,Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers a transient service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddTransient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Object)">
+            <summary>
+            Registers a transient service descriptor wrapper with a name into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="name">The service name.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddSingleton``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator{``0,``1},Stashbox.Registration.Fluent.RegistrationConfigurator{``0,``1}})">
+            <summary>
+            Registers a singleton service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator,Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers a singleton service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="serviceType">The service type.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator,Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers a singleton service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddSingleton``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Object)">
+            <summary>
+            Registers a singleton service descriptor wrapper with a name into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="name">The service name.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddScoped``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator{``0,``1},Stashbox.Registration.Fluent.RegistrationConfigurator{``0,``1}})">
+            <summary>
+            Registers a scoped service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator,Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers a scoped service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="serviceType">The service type.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Func{Stashbox.Registration.Fluent.RegistrationConfigurator,Stashbox.Registration.Fluent.RegistrationConfigurator})">
+            <summary>
+            Registers a scoped service descriptor wrapper into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="implementationType">The implementation type.</param>
+            <param name="configurator">The service registration configuration.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddScoped``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Object)">
+            <summary>
+            Registers a scoped service descriptor wrapper with a name into the given <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TService">The service type.</typeparam>
+            <typeparam name="TImplementation">The implementation type.</typeparam>
+            <param name="services">The service collection.</param>
+            <param name="name">The service name.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddStashbox(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Stashbox.IStashboxContainer})">
+            <summary>
+            Replaces the default <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1"/> with a factory which uses Stashbox as the default <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="configure">The callback action to configure the internal <see cref="T:Stashbox.IStashboxContainer"/>.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.AddStashbox(Microsoft.Extensions.DependencyInjection.IServiceCollection,Stashbox.IStashboxContainer)">
+            <summary>
+            Replaces the default <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1"/> with a factory which uses Stashbox as the default <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="container">An already configured <see cref="T:Stashbox.IStashboxContainer"/> instance to use.</param>
+            <returns>The service collection.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.UseStashbox(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Stashbox.IStashboxContainer})">
+            <summary>
+            Registers the services from the <paramref name="serviceCollection"/> and creates a service provider which uses Stashbox.
+            </summary>
+            <param name="serviceCollection">The service collection.</param>
+            <param name="configure">The callback action to configure the internal <see cref="T:Stashbox.IStashboxContainer"/>.</param>
+            <returns>The configured <see cref="T:System.IServiceProvider"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.UseStashbox(Microsoft.Extensions.DependencyInjection.IServiceCollection,Stashbox.IStashboxContainer)">
+            <summary>
+            Registers the services from the <paramref name="serviceCollection"/> and creates a service provider which uses Stashbox.
+            </summary>
+            <param name="serviceCollection">The service collection.</param>
+            <param name="container">An already configured <see cref="T:Stashbox.IStashboxContainer"/> instance to use.</param>
+            <returns>The configured <see cref="T:System.IServiceProvider"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.CreateBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Stashbox.IStashboxContainer})">
+            <summary>
+            Registers the services from the <paramref name="serviceCollection"/> and returns with the prepared <see cref="T:Stashbox.IStashboxContainer"/>.
+            </summary>
+            <param name="serviceCollection">The service collection.</param>
+            <param name="configure">The callback action to configure the internal <see cref="T:Stashbox.IStashboxContainer"/>.</param>
+            <returns>The configured <see cref="T:Stashbox.IStashboxContainer"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.CreateBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection,Stashbox.IStashboxContainer)">
+            <summary>
+            Registers the services from the <paramref name="serviceCollection"/> and returns with the prepared <see cref="T:Stashbox.IStashboxContainer"/>.
+            </summary>
+            <param name="serviceCollection">The service collection.</param>
+            <param name="container">An already configured <see cref="T:Stashbox.IStashboxContainer"/> instance to use.</param>
+            <returns>The configured <see cref="T:Stashbox.IStashboxContainer"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.StashboxServiceCollectionExtensions.RegisterServiceDescriptors(Stashbox.IStashboxContainer,System.Collections.Generic.IEnumerable{Microsoft.Extensions.DependencyInjection.ServiceDescriptor})">
+            <summary>
+            Registers the given services into the container.
+            </summary>
+            <param name="container">The <see cref="T:Stashbox.IStashboxContainer"/>.</param>
+            <param name="services">The service descriptors.</param>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions.GetService(System.IServiceProvider,System.Type,System.Object)">
+            <summary>Gets the named service object of the specified type.</summary>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <param name="name">The name of the service.</param>
+            <returns>A service object of type <paramref name="serviceType" /> or null if there is no such service.</returns>
+            <exception cref="T:System.NotSupportedException">The service provider is not a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions.GetService``1(System.IServiceProvider,System.Object)">
+            <summary>
+            Get named service of type <typeparamref name="T"/> from the <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <param name="name">The name of the service.</param>
+            <returns>A service object of type <typeparamref name="T"/> or null if there is no such service.</returns>
+            <exception cref="T:System.NotSupportedException">The service provider is not a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions.GetRequiredService(System.IServiceProvider,System.Type,System.Object)">
+            <summary>
+            Get named service of type <paramref name="serviceType"/> from the <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <param name="name">The name of the service.</param>
+            <returns>A service object of type <paramref name="serviceType"/>.</returns>
+            <exception cref="T:System.InvalidOperationException">There is no service of type <paramref name="serviceType"/> with the given <paramref name="name"/>.</exception>
+            <exception cref="T:System.NotSupportedException">The service provider is not a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions.GetRequiredService``1(System.IServiceProvider,System.Object)">
+            <summary>
+            Get named service of type <typeparamref name="T"/> from the <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <param name="name">The name of the service.</param>
+            <returns>A service object of type <typeparamref name="T"/>.</returns>
+            <exception cref="T:System.InvalidOperationException">There is no service of type <typeparamref name="T"/> with the given <paramref name="name"/>.</exception>
+            <exception cref="T:System.NotSupportedException">The service provider is not a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions.GetServices``1(System.IServiceProvider,System.Object)">
+            <summary>
+            Get an enumeration of named services of type <typeparamref name="T"/> from the <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the services from.</param>
+            <param name="name">The name of the service.</param>
+            <returns>An enumeration of services of type <typeparamref name="T"/>.</returns>
+            <exception cref="T:System.NotSupportedException">The service provider is not a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceProviderExtensions.GetServices(System.IServiceProvider,System.Type,System.Object)">
+            <summary>
+            Get an enumeration of services of type <paramref name="serviceType"/> from the <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the services from.</param>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <param name="name">The name of the service.</param>
+            <returns>An enumeration of services of type <paramref name="serviceType"/>.</returns>
+            <exception cref="T:System.NotSupportedException">The service provider is not a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.</exception>
+        </member>
+        <member name="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider">
+            <summary>
+            An <see cref="T:System.IServiceProvider"/> implementation that uses Stashbox to produce services.
+            </summary>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.#ctor(Stashbox.IDependencyResolver)">
+            <summary>
+            Constructs a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider"/>.
+            </summary>
+            <param name="dependencyResolver">A Stashbox <see cref="T:Stashbox.IDependencyResolver"/> implementation.</param>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.GetService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.GetRequiredService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.DisposeAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.IsService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.GetKeyedService(System.Type,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.GetRequiredKeyedService(System.Type,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProvider.IsKeyedService(System.Type,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory">
+            <summary>
+            Represents an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1"/> implementation based on <see cref="T:Stashbox.IStashboxContainer"/>
+            </summary>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory.#ctor(System.Action{Stashbox.IStashboxContainer})">
+            <summary>
+            Constructs a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory"/>
+            </summary>
+            <param name="configure">The callback action to configure the internal <see cref="T:Stashbox.IStashboxContainer"/>.</param>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory.#ctor(Stashbox.IStashboxContainer)">
+            <summary>
+            Constructs a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory"/>
+            </summary>
+            <param name="container">An already configured <see cref="T:Stashbox.IStashboxContainer"/> instance to use.</param>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory.CreateBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceProviderFactory.CreateServiceProvider(Stashbox.IStashboxContainer)">
+            <inheritdoc />
+        </member>
+        <member name="T:Stashbox.Extensions.DependencyInjection.StashboxServiceScope">
+            <summary>
+            Represents a service scope which uses Stashbox.
+            </summary>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceScope.#ctor(Stashbox.IDependencyResolver)">
+            <summary>
+            Constructs a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceScope"/>.
+            </summary>
+            <param name="dependencyResolver">The stashbox dependency resolver.</param>
+        </member>
+        <member name="P:Stashbox.Extensions.DependencyInjection.StashboxServiceScope.ServiceProvider">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceScope.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceScope.DisposeAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Stashbox.Extensions.DependencyInjection.StashboxServiceScopeFactory">
+            <summary>
+            Represents a factory which produces service scoped with Stashbox.
+            </summary>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceScopeFactory.#ctor(Stashbox.IDependencyResolver)">
+            <summary>
+            Constructs a <see cref="T:Stashbox.Extensions.DependencyInjection.StashboxServiceScopeFactory"/>.
+            </summary>
+            <param name="dependencyResolver">The Stashbox dependency resolver.</param>
+        </member>
+        <member name="M:Stashbox.Extensions.DependencyInjection.StashboxServiceScopeFactory.CreateScope">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
